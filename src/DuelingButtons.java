@@ -34,6 +34,11 @@ leftButton.setText("Click Me!");
 rightButton.setText("Click me!");
 leftButton.addActionListener(this);
 rightButton.addActionListener(this);
+panel.add(leftButton);
+panel.add(rightButton);
+frame.setTitle("Demanding Buttons");
+frame.pack();
+
 		// 2. Make the frame visible
 
 		// 3. Set the text of the leftButton to "Click me!"
@@ -67,7 +72,16 @@ rightButton.addActionListener(this);
 		
 		
 		/* If the buttonPressed was the rightButton, do the opposite. */
-		
+		if(leftButton == buttonPressed) {
+			rightButton.setText("No click me!");
+			leftButton.setPreferredSize(SMALL);
+			rightButton.setPreferredSize(BIG);
+		}
+		if(rightButton == buttonPressed) {
+			leftButton.setText("No click me!");
+			rightButton.setPreferredSize(SMALL);
+			leftButton.setPreferredSize(BIG);
+		}
 
 		frame.pack();
 	}

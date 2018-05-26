@@ -22,19 +22,24 @@ public class PhotoQuiz {
                 quizWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // This will make sure the program exits when you close the window
 
 		// 1. find an image on the internet, and put its URL in a String variable (from your browser, right click on the image, and select “Copy Image Address”)
-
+String a = "https://vignette.wikia.nocookie.net/starwars/images/3/3b/CodyTeth-TCWf.jpg/revision/latest?cb=20091112154454";
 		// 2. create a variable of type "Component" that will hold your image
-
+Component e;
 		// 3. use the "createImage()" method below to initialize your Component
-
+e = createImage(a);
 		// 4. add the image to the quiz window
-
+quizWindow.add(e);
 		// 5. call the pack() method on the quiz window
-
+quizWindow.pack();
 		// 6. ask a question that relates to the image
-
+String c = JOptionPane.showInputDialog("Who is this stormtrooper from the clone wars?");
 		// 7. print "CORRECT" if the user gave the right answer
-
+if(c.equals("CC-2244")) {
+	System.out.println("Correct");
+}
+else {
+	System.out.println("Wrong");
+}
 		// 8. print "INCORRECT" if the answer is wrong
 
 		// 9. remove the component from the quiz window (you may not see the effect of this until step 12)

@@ -26,11 +26,24 @@ public static void main(String[] args) {
 		button.addActionListener(this);
 		button1.addActionListener(this);
 		button2.addActionListener(this);
+		button.setText("WooHoo");
+		button1.setText("drum");
+		button2.setText("cymbal");
+		frame.pack();
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("Button Clicked");
-		
+		e.getSource();
+		if(e.getSource() == button) {
+			playSound("homer-woohoo.wav");
+		}
+		if(e.getSource() == button1) {
+		playSound("drum.wav");
+		}
+		if(e.getSource() == button2) {
+			playSound("cymbal.wav");
+		}
 	}
 	private void playSound(String fileName) {
 	     AudioClip sound = JApplet.newAudioClip(getClass().getResource(fileName)); 

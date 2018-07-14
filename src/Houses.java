@@ -2,60 +2,47 @@ import org.jointheleague.graphical.robot.Robot;
 
 public class Houses {
 	static Robot r = new Robot();
-int househeight;
+
 	public static void main(String[] args) {
 		r.setSpeed(100);
-		r.setX(100);
+		r.setX(1);
+		r.setY(580);
 		r.penDown();
 
-		for (int i = 0; i < 3; i++) {
-			house();
-			small();
-			medium();
-			large();
+		for (int i = 1; i < 11; i++) {
+        
+			house(i*50);
+			//small();
+			//medium();
+			//large();
 		}
-		r.turn(180);
-		for (int i = 0; i < 3; i++) {
-			house();
-			small();
-			medium();
-			large();
-		}
-
-	}
-	public static void drawhouse(String height, int colorRed, int colorGreen, int colorBlue) {
-		if(height.equals("small")) {
-			househeight = 60;
-			small(househeight);
-		}
-		
-		
 	}
 
-	public static void house() {
+	public static void house(String height) {
 		r.setPenColor(0, 45, 255);
+		if(height.equals("small")) {
+		height = 60;
+		}
 		// create left side
-		r.move(100);
-		r.turn(45);
+		r.move(height);
+		r.turn(90);
 		// Create roof
 		r.move(30);
 		r.turn(90);
-		r.move(30);
-		r.turn(45);
 		// create right side
-		r.move(100);
+		r.move(height);
 		r.turn(270);
 		r.setPenColor(3, 255, 71);
 		r.move(30);
 		r.turn(270);
 	}
-	public static void small(int height) {
+	public static void small() {
 		r.setPenColor(255, 3, 233);
-		r.move(height);
+		r.move(60);
 		r.turn(90);
 		r.move(30);
 		r.turn(90);
-		r.move(height);
+		r.move(60);
 		r.turn(270);
 		r.setPenColor(3, 255, 71);
 		r.move(30);
